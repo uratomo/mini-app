@@ -1,0 +1,13 @@
+<div class="original-box">
+    <div class="col s12 m6">
+      <div class="card #c8e6c9 green lighten-4">
+        <div class="card-content white-text">
+          <%=tweet.text%>
+        </div>
+        <div class="card-action">
+          <%=link_to "編集","tweets/#{tweet.id}/edit",method: :get%>
+          <%=link_to "削除","tweets/#{tweet.id}",method: :delete%>
+        </div>
+      </div>
+    </div>
+  </div>
