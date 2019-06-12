@@ -8,9 +8,10 @@
 </head>
 <body>
 
+
 <%= render @tweets %>
 
-        
+<%= paginate @tweets ,class:"pagenation"%>
 
 <script type="text/javascript" src="./app.js"></script>
 </body>
