@@ -4,10 +4,13 @@
         <div class="card-content white-text">
           <%=tweet.text%>
         </div>
-        <div class="card-action">
-          <%=link_to "編集","tweets/#{tweet.id}/edit",method: :get%>
-          <%=link_to "削除","tweets/#{tweet.id}",method: :delete%>
-        </div>
+          <div class="card-action">
+          <% if user_signed_in? %>     
+            <%=link_to "編集","tweets/#{tweet.id}/edit",method: :get%>
+            <%=link_to "削除","tweets/#{tweet.id}",method: :delete%>        
+          <% else %>
+            </div>
+          <% end %>
       </div>
     </div>
   </div>

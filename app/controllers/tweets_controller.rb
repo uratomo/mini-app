@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   def index
+    @tweets= Tweet.all.includes(:user)
   end
 
   def new
@@ -16,12 +17,20 @@ class TweetsController < ApplicationController
   end
 
   def update
-
+  tweet=Tweet.find(params[:id])
+  tweet.update(tweet_params)
+  redirect_to action: "index"
+ 
+  end
+  def destroy
+    tweet= Tweet.find(params[:id])
+    tweet.destroy
+    redirect_to action: "index"
   end
 
   private
 
   def tweet_params
-  params.require(:tweet).permit(:text,).merge(user_id:current_user.id)
+  params.require(:tweet).permit(:text).merge(user_id:current_user.id)
   end
 end
