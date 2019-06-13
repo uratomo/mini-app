@@ -13,5 +13,7 @@
  *= require_tree .
  *= require_self
  */
-
+ @import "config/colors";
+ @import "modules/flash";
  @import "./tweets";
+ 
